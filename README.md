@@ -3,7 +3,6 @@ AirQuickUtils provides a wide range of functions.<br/>
 Text, SharedPreferences, image, network, time, location (scheduled), logs, encryption, consolidation <br/>
 Various features such as SNS login (scheduled) can be used as a single library.<br/>
 <br/>
-<br/>
 # Features Included
 ## [Api Document Link](http://www.mowa.kr/airquickutil/)
 - AirLog
@@ -23,7 +22,6 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 - ~~AirImage~~(scheduled)
 - ~~AirLocation~~(scheduled)
 <br/>
-<br/>
 
 # Setup
 
@@ -31,13 +29,13 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 ```gradle
  scheduled
 ```
-<br/><br/>
+<br/>
 
 ### 2. Add Initialization into your Application class
 ```java
   AirQuickUtils.init(this);
 ```
-<br/><br/>
+<br/>
 
 # Usage
 ### How to use AirPref.
@@ -64,31 +62,41 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 ```java
   AirQuickUtils.log.d("LOG MESSAGE");
 ```
-<br/>
-
 
 <br/>
 
 ### How to use AirWebView.
+#### 1. Add AirCommonWebViewActivity into your AndroidManifest.xml
+```xml
+     <!-- AirCommonWebViewActivity -->
+     <activity android:name="yongbeom.utils.airquickutils.activity.AirCommonWebViewActivity"
+         android:theme="@style/Theme.AppCompat" />
+```
+
+#### 2. Set AirWebViewOption
 ```java
     AirWebViewOption webViewOption = new AirWebViewOption();
     webViewOption.setUrl("http://www.mowa.kr");
     webViewOption.setTitle("TEST WEB VIEW");
     webViewOption.setShowActionbar(false);
     webViewOption.setShowUrl(false);
+```
+
+#### 3. call startAirCommonWebView
+```java
     AirQuickUtils.webview.startAirCommonWebView(webViewOption);
 ```
 
 <br/>
 
-### How to use AirSystem. [Class AirQuickUtils.system](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.system.html)
+### AirSystem. [Class AirQuickUtils.system](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.system.html)
 ```java
   AirQuickUtils.system.getDeviceUUID();
 ```
 
 <br/>
 
-### How to use AirScreen. [Class AirQuickUtils.screen](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.screen.html)
+### AirScreen. [Class AirQuickUtils.screen](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.screen.html)
 ```java
   AirQuickUtils.screen.getScreenDensity();
 ```
@@ -96,7 +104,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 
 <br/>
 
-### How to use AirSdcard. [Class AirQuickUtils.sdcard](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.sdcard.html)
+### AirSdcard. [Class AirQuickUtils.sdcard](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.sdcard.html)
 ```java
   AirQuickUtils.sdcard.createTempDir();
 ```
