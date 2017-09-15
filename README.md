@@ -38,7 +38,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 <br/>
 
 # Usage
-### How to use AirPref.
+### AirPref.
 ##### set SharedPreferences.
 ```java
   AirQuickUtils.prefs.save("KEY_NAME" , "String Value");
@@ -58,14 +58,14 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 
 <br/>
 
-### How to use AirLog.
+### AirLog.
 ```java
   AirQuickUtils.log.d("LOG MESSAGE");
 ```
 
 <br/>
 
-### How to use AirWebView.
+### AirWebView.
 #### 1. Add AirCommonWebViewActivity into your AndroidManifest.xml
 ```xml
      <!-- AirCommonWebViewActivity -->
