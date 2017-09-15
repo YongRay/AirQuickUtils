@@ -34,6 +34,9 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 ### 2. Add Initialization into your Application class
 ```java
   AirQuickUtils.init(this);
+  // The log is not exposed in debug mode unless you specify. (Required)
+  AirQuickUtils.setMode(BuildConfig.DEBUG);
+  AirQuickUtils.setTAG("TAG NAME");
 ```
 <br/>
 
