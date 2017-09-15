@@ -27,7 +27,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 
 ### 1.Include the library as local library project.
 ```gradle
- scheduled
+  compile 'yongbeom.utils.airquickutils:AirQuickUtils:0.0.1'
 ```
 <br/>
 
