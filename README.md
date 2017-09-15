@@ -2,6 +2,7 @@
 AirQuickUtils provides a wide range of functions.<br/>
 Text, SharedPreferences, image, network, time, location (scheduled), logs, encryption, consolidation <br/>
 Various features such as SNS login (scheduled) can be used as a single library.<br/>
+[ ![Download](https://api.bintray.com/packages/yongbeam/maven/AirQuickUtils/images/download.svg) ](https://bintray.com/yongbeam/maven/AirQuickUtils/_latestVersion)
 <br/>
 # Features Included
 ## [Api Document Link](http://www.mowa.kr/airquickutil/)
