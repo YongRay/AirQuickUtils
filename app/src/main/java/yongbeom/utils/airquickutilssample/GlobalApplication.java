@@ -14,9 +14,9 @@ public class GlobalApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-
         // init AirQuickUtils
         AirQuickUtils.init(this);
-        AirQuickUtils.setTAG("Demo");
+        AirQuickUtils.setMode(BuildConfig.DEBUG);
+        AirQuickUtils.setTAG("TAG NAME");
     }
 }

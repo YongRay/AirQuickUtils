@@ -1,9 +1,10 @@
 package yongbeom.utils.airquickutils.core;
 
 import android.util.Log;
+
 import java.lang.reflect.Field;
+
 import yongbeom.utils.airquickutils.AirQuickUtils;
-import yongbeom.utils.airquickutils.BuildConfig;
 
 /**
  * AirLog
@@ -29,7 +30,7 @@ public class AirLog {
      * @param message The message you would like logged.
      */
     public static void d(String message) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 
@@ -45,7 +46,7 @@ public class AirLog {
      * @param throwable An exception to log
      */
     public static void d(String message , Throwable throwable) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 
@@ -63,7 +64,7 @@ public class AirLog {
      * @param value etc.
      */
     public static void d(String message, Class<?> classObj, String prefix, int value) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             String name = getMemberName(classObj, prefix, value);
 
             StackTraceElement[] stack = new Throwable().getStackTrace();
@@ -80,7 +81,7 @@ public class AirLog {
      * @param message The message you would like logged.
      */
     public static void w(String message) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 
@@ -96,7 +97,7 @@ public class AirLog {
      * @param throwable An exception to log
      */
     public static void w(String message, Throwable throwable) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 
@@ -111,7 +112,7 @@ public class AirLog {
      * @param message The message you would like logged.
      */
     public static void e(String message) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 
@@ -127,7 +128,7 @@ public class AirLog {
      * @param throwable An exception to log
      */
     public static void e(String message, Throwable throwable) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 
@@ -142,7 +143,7 @@ public class AirLog {
      * @param message The message you would like logged.
      */
     public static void i(String message) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 
@@ -157,7 +158,7 @@ public class AirLog {
      * @param message The message you would like logged.
      */
     public static void v(String message) {
-        if (BuildConfig.DEBUG) {
+        if (AirQuickUtils.isDebugMode()) {
             StackTraceElement[] stack = new Throwable().getStackTrace();
             StackTraceElement currentStack = stack[POS];
 

@@ -2,8 +2,10 @@ package yongbeom.utils.airquickutilssample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import yongbeom.utils.airquickutils.AirQuickUtils;
 import yongbeom.utils.airquickutils.activity.AirCommonWebViewIntent;
@@ -30,5 +32,19 @@ public class MainActivity extends AppCompatActivity {
                 AirQuickUtils.webview.startAirCommonWebView(webViewOption);
             }
         });
+
+        // set pref
+        AirQuickUtils.prefs.save("KEY_NAME1" , "String Value");
+        AirQuickUtils.prefs.save("KEY_NAME2" , true);
+        AirQuickUtils.prefs.save("KEY_NAME3" , 10);
+        AirQuickUtils.prefs.save("KEY_NAME4" , 10f);
+        AirQuickUtils.prefs.save("KEY_NAME5" , 10L);
+
+        // get pref or AirLog
+        AirQuickUtils.log.d(AirQuickUtils.prefs.getString("KEY_NAME1" , null));
+        AirQuickUtils.log.e("VALUE: " + AirQuickUtils.prefs.getBoolean("KEY_NAME2" , false));
+        AirQuickUtils.log.i("VALUE: " + AirQuickUtils.prefs.getInt("KEY_NAME3" , 0));
+        AirQuickUtils.log.w("VALUE: " + AirQuickUtils.prefs.getFloat("KEY_NAME4" , 0f));
+        AirQuickUtils.log.v("VALUE: " + AirQuickUtils.prefs.getLong("KEY_NAME5" , 0L));
     }
 }
