@@ -17,12 +17,17 @@ import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.net.URISyntaxException;
 
 import yongbeom.utils.airquickutils.R;
 import yongbeom.utils.airquickutils.collections.AirQuickUtilWebChromeClient;
+import yongbeom.utils.airquickutils.core.AirSystem;
 import yongbeom.utils.airquickutils.exceptions.MissingRequiredValueException;
 
 /**
@@ -44,11 +49,17 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
     public static boolean SHOW_CONTROLLER = false;
 
     private String mURL = null;
-    private String mTitle = null;
+    private String mOrgUrl = null;
+    private String mTitle = "";
 
     private float m_downX;
     private WebView mWebview;
     private ProgressBar progressBar;
+    private RelativeLayout rl_airquickutil_url_layout;
+    private EditText et_airquickutil_input_url;
+    private Button btn_airquickutil_go;
+    private RelativeLayout rl_airquickutil_controller;
+
     private ActionBar mActionbar;
 
     @Override
@@ -58,26 +69,32 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
 
         mWebview = findViewById(R.id.airquickutil_id_webView);
         progressBar = findViewById(R.id.airquickutil_id_progressBar);
+        rl_airquickutil_url_layout = findViewById(R.id.rl_airquickutil_url_layout);
+        et_airquickutil_input_url = findViewById(R.id.et_airquickutil_input_url);
+        btn_airquickutil_go = findViewById(R.id.btn_airquickutil_go);
+        rl_airquickutil_controller = findViewById(R.id.rl_airquickutil_controller);
 
         SHOW_URL = getIntent().getBooleanExtra(KEY_IS_URL, false);
         SHOW_SHARE = getIntent().getBooleanExtra(KEY_IS_SHARE, false);
         SHOW_ACTIONBAR = getIntent().getBooleanExtra(KEY_IS_ACTIONBAR, true);
+        SHOW_CONTROLLER = getIntent().getBooleanExtra(KEY_IS_CONTROLLER , false);
 
         if(getIntent().getStringExtra(KEY_URL) == null){
             // missing url error
             throw new MissingRequiredValueException();
         }else{
             mURL = getIntent().getStringExtra(KEY_URL);
+            mOrgUrl = mURL;
         }
 
         // SET ACTIONBAR
         if(getSupportActionBar() != null){
             mActionbar = getSupportActionBar();
-
             if(SHOW_ACTIONBAR){
                 mActionbar.show();
-                if(mTitle == null){
-                    mTitle = "";
+                mActionbar.setDisplayHomeAsUpEnabled(true);
+                if(getIntent().getStringExtra(KEY_TITLE) != null){
+                    mTitle = getIntent().getStringExtra(KEY_TITLE);
                 }
                 mActionbar.setTitle(mTitle);
             }else{
@@ -113,6 +130,7 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                mURL = url;
                 return setScheme(url);
             }
 
@@ -120,6 +138,7 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 String url = request.getUrl().toString();
+                mURL = url;
                 return setScheme(url);
             }
 
@@ -179,7 +198,7 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
 
 
         if(SHOW_URL){
-            // TODO
+            setUrlLayout();
         }
 
         if(SHOW_SHARE){
@@ -188,10 +207,45 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
 
         if(SHOW_CONTROLLER){
             // TODO
-
+//            setWebController();
         }
 
         mWebview.loadUrl(mURL);
+    }
+
+    private void setUrlLayout(){
+        rl_airquickutil_url_layout.setVisibility(View.VISIBLE);
+        et_airquickutil_input_url.setText(mURL);
+        btn_airquickutil_go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String inputUrl = et_airquickutil_input_url.getText().toString().trim();
+                if(!inputUrl.startsWith("http")){
+                    inputUrl = "http://"+inputUrl;
+                }
+                AirSystem.requestHideKeyboard(et_airquickutil_input_url);
+                et_airquickutil_input_url.setText(inputUrl);
+                mWebview.loadUrl(inputUrl);
+            }
+        });
+        et_airquickutil_input_url.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String inputUrl = et_airquickutil_input_url.getText().toString().trim();
+                if(!inputUrl.startsWith("http")){
+                    inputUrl = "http://"+inputUrl;
+                }
+                AirSystem.requestHideKeyboard(et_airquickutil_input_url);
+                et_airquickutil_input_url.setText(inputUrl);
+                mWebview.loadUrl(inputUrl);
+                return true;
+            }
+        });
+    }
+
+    private void setWebController(){
+        rl_airquickutil_controller.setVisibility(View.VISIBLE);
+
     }
 
     private boolean setScheme(String url) {
@@ -241,7 +295,7 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK:
                 if(mWebview != null){
-                    if(!mWebview.getUrl().equals(mURL)){
+                    if(!mURL.equals(mOrgUrl)){
                         mWebview.goBack();
                         return true;
                     }else{
