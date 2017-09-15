@@ -142,8 +142,8 @@ public class AirCommonWebViewActivity extends AppCompatActivity {
         mWebview.getSettings().setJavaScriptEnabled(true);
         mWebview.setHorizontalScrollBarEnabled(true);
         mWebview.getSettings().setSupportZoom(true);
-        mWebview.getSettings().setBuiltInZoomControls(true);
-        mWebview.getSettings().setDisplayZoomControls(true);
+        mWebview.getSettings().setBuiltInZoomControls(false);
+        mWebview.getSettings().setDisplayZoomControls(false);
         mWebview.getSettings().setDefaultTextEncodingName("UTF-8");
         mWebview.getSettings().setLoadWithOverviewMode(true);
         mWebview.getSettings().setDatabaseEnabled(true);

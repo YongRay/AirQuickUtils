@@ -17,6 +17,6 @@ public class GlobalApplication extends Application {
 
         // init AirQuickUtils
         AirQuickUtils.init(this);
-        AirQuickUtils.setTAG("내앱");
+        AirQuickUtils.setTAG("Demo");
     }
 }

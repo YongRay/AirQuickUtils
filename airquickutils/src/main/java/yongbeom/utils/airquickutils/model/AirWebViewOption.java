@@ -9,9 +9,9 @@ package yongbeom.utils.airquickutils.model;
 public class AirWebViewOption {
     String url = null;
     String title = null;
-    boolean is_actionbar = true;
-    boolean is_url = false;
-    boolean is_share = false;
+    boolean showActionbar = true;
+    boolean showUrl = false;
+    boolean showShare = false;
 
     public String getUrl() {
         return url;
@@ -29,27 +29,27 @@ public class AirWebViewOption {
         this.title = title;
     }
 
-    public boolean is_actionbar() {
-        return is_actionbar;
+    public boolean isShowActionbar() {
+        return showActionbar;
     }
 
-    public void setIs_actionbar(boolean is_actionbar) {
-        this.is_actionbar = is_actionbar;
+    public void setShowActionbar(boolean showActionbar) {
+        this.showActionbar = showActionbar;
     }
 
-    public boolean is_url() {
-        return is_url;
+    public boolean isShowUrl() {
+        return showUrl;
     }
 
-    public void setIs_url(boolean is_url) {
-        this.is_url = is_url;
+    public void setShowUrl(boolean showUrl) {
+        this.showUrl = showUrl;
     }
 
-    public boolean is_share() {
-        return is_share;
+    public boolean isShowShare() {
+        return showShare;
     }
 
-    public void setIs_share(boolean is_share) {
-        this.is_share = is_share;
+    public void setShowShare(boolean showShare) {
+        this.showShare = showShare;
     }
 }

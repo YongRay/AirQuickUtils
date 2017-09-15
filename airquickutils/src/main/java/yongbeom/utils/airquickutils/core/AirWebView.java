@@ -25,9 +25,9 @@ public class AirWebView {
         }
 
         AirCommonWebViewIntent aIntent = new AirCommonWebViewIntent(AirQuickUtils.getContext());
-        aIntent.setShare(option.is_share());
-        aIntent.setShowActionbar(option.is_actionbar());
-        aIntent.setShowUrl(option.is_url());
+        aIntent.setShare(option.isShowShare());
+        aIntent.setShowActionbar(option.isShowActionbar());
+        aIntent.setShowUrl(option.isShowUrl());
         aIntent.setUrl(option.getUrl());
         aIntent.setTitle(option.getTitle());
         aIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
