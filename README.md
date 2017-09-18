@@ -2,7 +2,7 @@
 AirQuickUtils provides a wide range of functions.<br/>
 Text, SharedPreferences, image, network, time, location (scheduled), logs, encryption, consolidation <br/>
 Various features such as SNS login (scheduled) can be used as a single library.<br/>
-[ ![Download](https://api.bintray.com/packages/yongbeam/maven/AirQuickUtils/images/download.svg) ](https://bintray.com/yongbeam/maven/AirQuickUtils/_latestVersion)
+[![](https://jitpack.io/v/yongbeam/AirQuickUtils.svg)](https://jitpack.io/#yongbeam/AirQuickUtils)
 <br/>
 # Features Included
 ## [Api Document Link](http://www.mowa.kr/airquickutil/)
@@ -28,8 +28,18 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 
 ### 1.Include the library as local library project.
 ```gradle
-  compile 'yongbeom.utils.airquickutils:AirQuickUtils:0.0.1'
+  allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
+
+```gradle
+  compile 'com.github.yongbeam:AirQuickUtils:0.0.1'
+```
+
 <br/>
 
 ### 2. Add Initialization into your Application class
