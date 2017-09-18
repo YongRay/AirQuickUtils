@@ -25,7 +25,8 @@ public class AirWebView {
         }
 
         AirCommonWebViewIntent aIntent = new AirCommonWebViewIntent(AirQuickUtils.getContext());
-        aIntent.setShare(option.isShowShare());
+//        aIntent.setShare(option.isShowShare());
+//        aIntent.setController();
         aIntent.setShowActionbar(option.isShowActionbar());
         aIntent.setShowUrl(option.isShowUrl());
         aIntent.setUrl(option.getUrl());

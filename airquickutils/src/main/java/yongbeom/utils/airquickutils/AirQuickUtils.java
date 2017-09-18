@@ -16,6 +16,7 @@ import yongbeom.utils.airquickutils.core.AirSystem;
 import yongbeom.utils.airquickutils.core.AirValidation;
 import yongbeom.utils.airquickutils.core.AirWebView;
 import yongbeom.utils.airquickutils.exceptions.InitSettingException;
+import yongbeom.utils.airquickutils.exceptions.MissingSetModeException;
 
 /**
  * AirQuickUtils
@@ -25,6 +26,8 @@ import yongbeom.utils.airquickutils.exceptions.InitSettingException;
 public abstract class AirQuickUtils {
     public static String TAG = "REPLACE_TAG_NAME";
     private static Context mContext;
+
+    private static Boolean shouldMode = null;
 
     /**
      * private constructor
@@ -50,8 +53,14 @@ public abstract class AirQuickUtils {
      */
     public static synchronized void init(Context context) {
         mContext = context;
-
         setTAG(AirQuickUtils.system.getApplicationNameByContext());
+    }
+
+    public static Boolean isDebugMode() {
+        if(shouldMode == null){
+            throw new MissingSetModeException();
+        }
+        return shouldMode;
     }
 
     /**
@@ -63,6 +72,15 @@ public abstract class AirQuickUtils {
         TAG = tag;
     }
 
+    /**
+     * Set log exposure manually.
+     * Default : Exposure only in debug mode
+     *
+     * @param isDebug default false
+     */
+    public static void setMode(boolean isDebug) {
+        shouldMode = isDebug;
+    }
 
     /**
      * Device Util Class.
