@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.content.pm.Signature;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -21,6 +22,7 @@ import android.os.StatFs;
 import android.os.Vibrator;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.design.widget.Snackbar;
 import android.telephony.TelephonyManager;
 import android.util.Base64;
 import android.util.DisplayMetrics;
@@ -200,6 +202,22 @@ public class AirSystem {
         return hash;
     }
 
+
+    /**
+     * Check whether certain apps are installed
+     *
+     * @param packageName name of the package (e.g. "com.example.app")
+     * @return True if installed , Returns false if none is present
+     */
+    public static boolean isInstalledApp( String packageName) {
+        PackageManager pm = AirQuickUtils.getContext().getPackageManager();
+        try {
+            return (pm.getPackageInfo(packageName, PackageManager.GET_SIGNATURES) != null);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+
     /**
      * Make the smartphone vibrate for a giving time. You need to put the
      * vibration permission in the manifest as follows: <uses-permission
@@ -235,6 +253,18 @@ public class AirSystem {
         Toast toast = Toast.makeText(AirQuickUtils.getContext(), message, duration);
         toast.show();
     }
+
+
+    /**
+     * Quick Snackbar method
+     *
+     * @param message  The text to show. Can be formatted text.
+     * @param view Base view to expose
+     */
+    public static void snackBar(View view , String message){
+        Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show();
+    }
+
 
     /**
      * Sleep

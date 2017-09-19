@@ -33,9 +33,15 @@ import yongbeom.utils.airquickutils.exceptions.MissingRequiredValueException;
 /**
  * AirCommonWebViewActivity
  *
+ * <b>Add AirCommonWebViewActivity into your AndroidManifest.xml</b>
+ *
+ * <pre>
+ * <activity android:name="yongbeom.utils.airquickutils.activity.AirCommonWebViewActivity"
+ * android:theme="@style/Theme.AppCompat" />
+ * </pre>
+ *
  * Created by leeyongbeom on 2017. 9. 15..
  */
-
 public class AirCommonWebViewActivity extends AppCompatActivity {
     public static String KEY_URL = "url";
     public static String KEY_TITLE = "title";

@@ -2,6 +2,7 @@ package yongbeom.utils.airquickutils.core;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -43,6 +44,22 @@ public class AirValidation {
         } catch (MalformedURLException ex) {
             return false;
         }
+    }
+
+    /**
+     * Verify that the contents contain URLs.
+     *
+     * @param text Text containing URL
+     * @return True if the value is a valid TEXT
+     */
+    public static boolean isVerifyUrl(String text){
+        String regex = "[(http(s)?):\\/\\/(www\\.)?a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,6}\\b([-a-zA-Z0-9@:%_\\+.~#?&//=]*)";
+        regex = regex + " ";
+
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(text);
+
+        return m.find();
     }
 
     /**
