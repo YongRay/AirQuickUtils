@@ -22,6 +22,7 @@ public class AirShare {
      *
      * add dependencies compile 'com.github.yongbeam:AirQuickUtils-CommonSNS:x.x.x'
      */
+    @Deprecated
     public static void postFacebookFeed(Bitmap shareImage){
     }
 

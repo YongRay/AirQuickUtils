@@ -13,6 +13,7 @@ public class AirSnsLogin {
      *
      * add dependencies compile 'com.github.yongbeam:AirQuickUtils-CommonSNS:x.x.x'
      */
+    @Deprecated
     public static void goNaverLogin(){
     }
 
@@ -22,6 +23,7 @@ public class AirSnsLogin {
      *
      * add dependencies compile 'com.github.yongbeam:AirQuickUtils-CommonSNS:x.x.x'
      */
+    @Deprecated
     public static void goKakaoLogin(){
     }
 
@@ -31,6 +33,7 @@ public class AirSnsLogin {
      *
      * add dependencies compile 'com.github.yongbeam:AirQuickUtils-CommonSNS:x.x.x'
      */
+    @Deprecated
     public static void goFacebookLogin(){
     }
 
