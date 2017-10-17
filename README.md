@@ -16,7 +16,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 - AirValidation
 - AirWebView
 - ~~AirNetwork~~(scheduled)
-- ~~AirSecurity~~(scheduled)
+- AirSecurity
 - ~~AirSnsLogin~~(scheduled)
 - ~~AirAnimation~~(scheduled)
 - ~~AirDateTime~~(scheduled)
@@ -37,7 +37,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 ```
 
 ```gradle
-  compile 'com.github.yongbeam:AirQuickUtils:0.0.1'
+  compile 'com.github.yongbeam:AirQuickUtils:0.0.2'
 ```
 
 <br/>
