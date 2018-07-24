@@ -15,13 +15,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 - AirSystem
 - AirValidation
 - AirWebView
-- ~~AirNetwork~~(scheduled)
 - AirSecurity
-- ~~AirSnsLogin~~(scheduled)
-- ~~AirAnimation~~(scheduled)
-- ~~AirDateTime~~(scheduled)
-- ~~AirImage~~(scheduled)
-- ~~AirLocation~~(scheduled)
 <br/>
 
 # Setup
@@ -127,7 +121,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 
 # License
 
-    Copyright 2017 LeeYongBeom
+    Copyright 2017 ~ 2018 LeeYongBeom
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
