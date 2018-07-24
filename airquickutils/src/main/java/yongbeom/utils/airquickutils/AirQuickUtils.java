@@ -3,7 +3,6 @@ package yongbeom.utils.airquickutils;
 import android.content.Context;
 
 import yongbeom.utils.airquickutils.core.AirAnimation;
-import yongbeom.utils.airquickutils.core.AirDateTime;
 import yongbeom.utils.airquickutils.core.AirImage;
 import yongbeom.utils.airquickutils.core.AirLocation;
 import yongbeom.utils.airquickutils.core.AirLog;
@@ -147,12 +146,6 @@ public abstract class AirQuickUtils {
      * Default WebView Activity class.
      */
     public static class webview extends AirWebView {
-    }
-
-    /**
-     * Date calculation Util class.
-     */
-    public static class dateTime extends AirDateTime {
     }
 
     /**

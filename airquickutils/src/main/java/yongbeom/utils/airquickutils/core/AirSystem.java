@@ -225,6 +225,7 @@ public class AirSystem {
      *
      * @param duration duration of the vibration in miliseconds
      */
+    @Deprecated
     public static void vibrate(int duration) {
         Vibrator v = (Vibrator) AirQuickUtils.getContext().getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(duration);
