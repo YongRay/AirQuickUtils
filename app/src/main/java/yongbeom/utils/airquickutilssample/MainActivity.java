@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 AirWebViewOption webViewOption = new AirWebViewOption();
-                webViewOption.setUrl("http://www.mowa.kr");
+                webViewOption.setUrl("https://www.google.com");
                 webViewOption.setTitle("TEST WEB VIEW");
                 webViewOption.setShowActionbar(false);
                 webViewOption.setShowUrl(false);
