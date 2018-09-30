@@ -31,7 +31,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 ```
 
 ```gradle
-  implementation 'com.github.yongbeam:AirQuickUtils:0.0.3'
+  implementation 'com.github.yongbeam:AirQuickUtils:x.x.x'
 ```
 
 <br/>
