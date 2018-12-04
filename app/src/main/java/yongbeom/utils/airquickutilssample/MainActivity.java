@@ -1,14 +1,11 @@
 package yongbeom.utils.airquickutilssample;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import yongbeom.utils.airquickutils.AirQuickUtils;
-import yongbeom.utils.airquickutils.activity.AirCommonWebViewIntent;
 import yongbeom.utils.airquickutils.model.AirWebViewOption;
 
 public class MainActivity extends AppCompatActivity {
