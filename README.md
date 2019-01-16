@@ -5,7 +5,6 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 [![](https://jitpack.io/v/yongbeam/AirQuickUtils.svg)](https://jitpack.io/#yongbeam/AirQuickUtils)
 <br/>
 # Features Included
-## [Api Document Link](http://www.mowa.kr/airquickutil/)
 - AirLog
 - AirPrefs
 - AirScreen
@@ -97,14 +96,14 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 
 <br/>
 
-### AirSystem. [Class AirQuickUtils.system](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.system.html)
+### AirSystem. [Class AirQuickUtils.system]
 ```java
   AirQuickUtils.system.getDeviceUUID();
 ```
 
 <br/>
 
-### AirScreen. [Class AirQuickUtils.screen](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.screen.html)
+### AirScreen. [Class AirQuickUtils.screen]
 ```java
   AirQuickUtils.screen.getScreenDensity();
 ```
@@ -112,7 +111,7 @@ Various features such as SNS login (scheduled) can be used as a single library.<
 
 <br/>
 
-### AirSdcard. [Class AirQuickUtils.sdcard](http://www.mowa.kr/airquickutil/yongbeom/utils/airquickutils/AirQuickUtils.sdcard.html)
+### AirSdcard. [Class AirQuickUtils.sdcard]
 ```java
   AirQuickUtils.sdcard.createTempDir();
 ```
